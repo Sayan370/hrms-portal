@@ -78,7 +78,7 @@ const PageWithHeaderFooter = ({
                 </main>
             </ErrorBoundary>
             <footer className="bg-slate-50 px-8 py-3 text-xs dark:bg-slate-950">
-                Copyright © {new Date().getFullYear()} MNSR Trading Pvt. Ltd. -
+                Copyright © {new Date().getFullYear()} HRMS App Pvt. Ltd. -
                 All Rights Reserved.
             </footer>
         </>

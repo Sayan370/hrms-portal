@@ -26,24 +26,26 @@ const BrandLogo: React.FC<BrandLogoProps> = ({
     classes,
 }) => {
     const content = !minimal ? (
-        <div className={clsx("mx-auto my-0 h-16 w-36", classes?.container)}>
-            <img
+        <div className={clsx("mx-auto my-0 h-16 w-full flex items-center", classes?.container)}>
+            {/* <img
                 alt="Brand Logo"
                 className="h-full w-full"
                 src={getFullBrandLogo(fullLogoType)}
-            />
+            /> */}
+            <span className="text-2xl w-full justify-center items-center flex"> HRMS App</span>
         </div>
     ) : (
         <div
             className={clsx(
-                "relative mx-auto my-0 h-12 w-12",
+                "relative mx-auto my-0 h-12 w-full flex items-center",
                 classes?.container
             )}>
-            <img
+            {/* <img
                 alt="Brand Logo"
                 className="h-full w-full object-cover"
                 src={getFullBrandLogo("icon")}
-            />
+            /> */}
+            <span className="text-2xl w-full justify-center items-center flex"> HP </span>
         </div>
     );
     return (
