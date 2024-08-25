@@ -1,0 +1,16 @@
+export const QueryConst = {
+    getAttendance: "/attendance/get",
+    getDailyAttendance: "/attendance/get-daily",
+    setAttendance: "/attendance/set",
+    getEmployeesList: "/employees/get",
+    setEmployee: "/employee/set",
+    getLeave: "/attendance/get-leave",
+    getMaintenanceHistoryList: "/maintenance/get-maintenance-history",
+    setMaintenance: "/maintenance/set-maintenance",
+    setLeaveApplication: "/employee/set-leave-application",
+    getSalary: "/salary/get",
+    getStockHistoryList: "/inventory/get-stock-history",
+    getStockMovementDataList: "/inventory/get-stock-movement",
+    setStockHistoryList: "/inventory/set-stock-history",
+    getRequisitionList: "/inventory/get-requisition",
+};

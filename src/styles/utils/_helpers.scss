@@ -1,0 +1,41 @@
+/*! purgecss start ignore */
+@include apply-styles-for(dark) {
+    @each $name, $color in $dark-colors {
+        --clr-#{$name}: #{$color};
+    }
+
+    #printJS-Modal {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+@include apply-styles-for(light) {
+    @each $name, $color in $light-colors {
+        --clr-#{$name}: #{$color};
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--clr-brand-secondary);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+    // outline: 1px solid var(--brand-primary);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--clr-bg);
+}
+
+::-webkit-scrollbar-corner {
+    border-radius: 10px;
+    background-color: var(--clr-bg);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: var(--clr-bg);
+}
+
+/*! purgecss end ignore */

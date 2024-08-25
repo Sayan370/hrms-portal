@@ -1,0 +1,81 @@
+%scroll-auto {
+    overflow: auto;
+}
+
+.custom-scroll {
+    @extend %scroll-auto;
+    // scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3);
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 4px;
+        height: 3px;
+        border-radius: 2px;
+    }
+    &.light {
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+.dark {
+    .custom-scroll {
+        &.light {
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+}
+.custom-scroll-super-slim {
+    @extend %scroll-auto;
+    // scrollbar-width: thin;
+    scrollbar-color: rgba(70, 70, 70, 0.616);
+    visibility: hidden;
+    @include respond(tl) {
+        visibility: visible;
+    }
+    .content,
+    &:hover,
+    &:focus,
+    &:active {
+        visibility: visible;
+    }
+
+    &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+        -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(70, 70, 70, 0.616);
+        width: 2px;
+        height: 2px;
+        border-radius: 2px;
+    }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}

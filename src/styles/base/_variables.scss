@@ -1,0 +1,117 @@
+// COLORS
+$variable: (
+    "colors": (
+        "dark": (
+            "solids-dark-1": #151515,
+            "solids-dark-2": #272727,
+            "solids-white": #ffffff,
+            "greys-grey-90": #383838,
+            "greys-grey-60": #d7d6d5,
+            "greys-grey-30": #eeeded,
+            "greys-op-30": rgba(39, 39, 39, 0.5),
+            "greys-inbetween": #797979,
+            "accents-warning": #f66121,
+            "accents-success": #72ce08,
+            "accents-medium": #f6e121,
+            "accents-darkred": #3c302c,
+            "accents-red": #eb5757,
+            "accents-darkgreen": #2d3c2c,
+            "brand-primary": #000ed1,
+            "brand-secondary": #f9a825,
+            "brand-secondary-l2": #fab647,
+            "bg": #080052,
+            "transparent-bg": #262626,
+            "txt": #e8fceb,
+            "bs": rgba(0, 0, 0, 0.2),
+            "bs-l1": rgba(9, 30, 66, 0.65),
+            "bg-highlight": rgba(0, 0, 0, 0.5)
+        ),
+        "light": (
+            "solids-dark-1": #151515,
+            "solids-dark-2": #272727,
+            "solids-white": #ffffff,
+            "greys-grey-90": #383838,
+            "greys-grey-60": #d7d6d5,
+            "greys-grey-30": #eeeded,
+            "greys-op-30": rgba(39, 39, 39, 0.5),
+            "greys-inbetween": #797979,
+            "accents-warning": #f66121,
+            "accents-success": #72ce08,
+            "accents-medium": #f6e121,
+            "accents-darkred": #3c302c,
+            "accents-red": #eb5757,
+            "accents-darkgreen": #2d3c2c,
+            "brand-primary": #3e52ff,
+            "brand-secondary": #f9a825,
+            "brand-secondary-l2": #fab647,
+            "bg": #e0ebff,
+            "transparent-bg": #ffffff,
+            "txt": #fdffe9,
+            "bs": rgba(0, 0, 0, 0.1),
+            "bs-l1": rgba(9, 30, 66, 0.25),
+            "bg-highlight": rgba(0, 0, 0, 0.5)
+        )
+    )
+);
+
+$colors: map-get(
+    $map: $variable,
+    $key: "colors"
+);
+$light-colors: map-get(
+    $map: $colors,
+    $key: "light"
+);
+$dark-colors: map-get(
+    $map: $colors,
+    $key: "dark"
+);
+
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "PT Serif Caption", serif;
+// $font-tertiary: "Cabin Sketch", cursive;
+
+$b-radius: 4px;
+$even-spacing: 4px;
+
+$breakpoint-xxs-phone: 280px;
+$breakpoint-xs-phone: 320px;
+$breakpoint-phone: 576px;
+$breakpoint-tab-port: 768px;
+$breakpoint-tab-land: 1024px;
+$breakpoint-laptop: 1072px;
+$breakpoint-small-desktop: 1280px;
+$breakpoint-desktop: 1368px;
+$breakpoint-mid-desktop: 1440px;
+$breakpoint-large-desktop: 1920px;
+
+$breakpoints: (
+    "xxsp": "280px",
+    "xsp": "320px",
+    "p": "576px",
+    "tp": "768px",
+    "tl": "1024px",
+    "sd": "1280px",
+    "d": "1368px",
+    "ld": "1920px"
+);
+$breakpoints-abbr: (
+    "xxsp": "xxs-phone",
+    "xsp": "xs-phone",
+    "p": "phone",
+    "tp": "tab-port",
+    "tl": "tab-land",
+    "sd": "small-desktop",
+    "d": "desktop",
+    "ld": "large-desktop"
+);
+$breakpoints-inv-abbr: (
+    "xxs-phone": "xxsp",
+    "xs-phone": "xsp",
+    "phone": "p",
+    "tab-port": "tp",
+    "tab-land": "tl",
+    "small-desktop": "sd",
+    "desktop": "d",
+    "large-desktop": "ld"
+);

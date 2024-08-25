@@ -1,0 +1,46 @@
+.responsive-table {
+    // min-width: unset !important;
+    // &__header {
+    //     &.no-toolbar {
+    //         .MuiTableCell-head {
+    //             background-color: var(--clr-bg);
+    //             color: white;
+    //             &:first-child {
+    //                 border-top-left-radius: 4px;
+    //             }
+    //             &:last-child {
+    //                 border-top-right-radius: 4px;
+    //             }
+    //         }
+    //         $self: ".MuiTableSortLabel";
+    //         #{$self}-root {
+    //             @include transition-default;
+    //             color: white;
+    //             &:hover {
+    //                 color: var(--clr-brand-secondary) !important;
+    //             }
+    //             &#{$self}-active {
+    //                 color: white;
+    //                 & #{$self}-icon {
+    //                     transition: inherit;
+    //                     color: white !important;
+    //                 }
+    //                 &:hover #{$self}-icon {
+    //                     color: var(--clr-brand-secondary) !important;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    .visually-hidden {
+        border: 0px;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0px;
+        position: absolute;
+        top: 20px;
+        width: 1px;
+    }
+}

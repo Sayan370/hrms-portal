@@ -1,0 +1,99 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin abs-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin transition-default {
+    transition: all 0.3s ease;
+}
+
+@mixin transition-default-for-prop($prop, $time: "0.3s") {
+    transition: $prop #{$time} ease;
+}
+
+@mixin transition-slow {
+    transition: all 0.5s ease-out;
+}
+
+@mixin hide-scroll-for($elem) {
+    #{$elem} {
+        scrollbar-color: transparent transparent;
+    }
+    #{$elem}::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: transparent;
+        box-shadow: inset 0 0 6px transparent;
+        outline: 1px solid transparent;
+    }
+
+    #{$elem}::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+
+    #{$elem}::-webkit-scrollbar-track {
+        border-radius: 0px;
+        background-color: transparent;
+    }
+
+    #{$elem}::-webkit-scrollbar-corner {
+        border-radius: 0px;
+        background-color: transparent;
+    }
+}
+
+// MEDIA QUERY DISTRIBUTE
+
+@mixin respond($breakpoint) {
+    @each $name, $abbr in $breakpoints-inv-abbr {
+        @if $breakpoint == $name or $breakpoint == $abbr {
+            @media only screen and (max-width: map-get($breakpoints, $abbr)) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin respond-for-small-screen() {
+    @media only screen and (max-height: 361px) {
+        @content;
+    }
+}
+@mixin apply-styles-for($theme) {
+    .#{$theme}-theme {
+        @content;
+    }
+}
+
+@mixin fface($path, $family, $type: "", $weight: 400, $svg: "", $style: normal) {
+    @font-face {
+        font-family: $family;
+        @if $svg == "" {
+            // with OTF without SVG and EOT
+            src: url("#{$path}#{$type}.otf") format("opentype"), url("#{$path}#{$type}.woff2") format("woff2"),
+                url("#{$path}#{$type}.woff") format("woff"), url("#{$path}#{$type}.ttf") format("truetype");
+        } @else {
+            // traditional src inclusions
+            src: url("#{$path}#{$type}.eot");
+            src: url("#{$path}#{$type}.eot?#iefix") format("embedded-opentype"),
+                url("#{$path}#{$type}.woff2") format("woff2"), url("#{$path}#{$type}.woff") format("woff"),
+                url("#{$path}#{$type}.ttf") format("truetype"), url("#{$path}#{$type}.svg##{$svg}") format("svg");
+        }
+        font-weight: $weight;
+        font-style: $style;
+    }
+}

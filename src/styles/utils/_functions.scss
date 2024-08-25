@@ -1,0 +1,7 @@
+/********** get rem value with pixel value *******/
+@function rem($pixel) {
+    @return calc($pixel / 16) + rem;
+}
+@function color($color) {
+    @return map-get($light-colors, $color);
+}
